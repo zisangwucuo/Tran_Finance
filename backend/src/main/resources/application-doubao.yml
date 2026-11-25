@@ -1,0 +1,8 @@
+ai:
+  narrative:
+    enabled: ${AI_NARRATIVE_ENABLED:true}
+    api-url: ${AI_NARRATIVE_API_URL:https://ark.cn-beijing.volces.com/api/v3/chat/completions}
+    api-key: ${ARK_API_KEY:${AI_NARRATIVE_API_KEY:}}
+    model: ${ARK_MODEL:${AI_NARRATIVE_MODEL:}}
+    response-format-json: ${AI_NARRATIVE_RESPONSE_FORMAT_JSON:false}
+    deepseek-thinking-disabled: ${AI_NARRATIVE_DEEPSEEK_THINKING_DISABLED:true}

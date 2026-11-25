@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 101MB
+  config:
+    import: optional:classpath:application-local.yml
+  application:
+    name: trans-finance-backend
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:trans_finance}?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true"
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD}
+  jackson:
+    default-property-inclusion: non_null
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    map-underscore-to-camel-case: true
+  global-config:
+    banner: false
+
+ml:
+  service-url: ${ML_SERVICE_URL:http://127.0.0.1:8090}
+
+company:
+  default-password: ${COMPANY_DEFAULT_PASSWORD:}
+
+ai:
+  narrative:
+    enabled: ${AI_NARRATIVE_ENABLED:false}
+    api-url: ${AI_NARRATIVE_API_URL:}
+    api-key: ${AI_NARRATIVE_API_KEY:}
+    model: ${AI_NARRATIVE_MODEL:}
+    response-format-json: ${AI_NARRATIVE_RESPONSE_FORMAT_JSON:false}
+    deepseek-thinking-disabled: ${AI_NARRATIVE_DEEPSEEK_THINKING_DISABLED:false}

@@ -1,0 +1,197 @@
+/* 金融机构端主题限定在工作台内，避免影响企业端、登录页和打印报告。 */
+.financial-shell {
+  --el-color-primary: #177b78;
+  --el-color-primary-light-3: #589f9d;
+  --el-color-primary-light-5: #8bbdba;
+  --el-color-primary-light-7: #bddad7;
+  --el-color-primary-light-8: #d9ece9;
+  --el-color-primary-light-9: #edf7f5;
+  --el-color-primary-dark-2: #12635f;
+  --el-border-color: #dce4e6;
+  --el-border-color-light: #e7edee;
+  --el-border-color-lighter: #eef2f3;
+  --el-text-color-primary: #263a40;
+  --el-text-color-regular: #53656c;
+  --el-text-color-secondary: #77888e;
+  height: 100dvh;
+  min-width: 0;
+  overflow: hidden;
+  letter-spacing: 0;
+}
+.financial-shell .el-container { min-width: 0; }
+.financial-shell .sidebar {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(175deg, #fbfdfd 10%, #eef6f5 68%, #e4f1ee);
+  border-right: 1px solid #dfe9e7;
+}
+.financial-shell .sidebar-logo {
+  min-height: 88px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.financial-shell .brand-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #177b78;
+  color: white;
+  font-size: 23px;
+}
+.financial-shell .sidebar-logo strong { display: block; font-size: 19px; color: #204941; }
+.financial-shell .sidebar-logo span { display: block; margin-top: 5px; font-size: 11px; color: #73877f; }
+.financial-shell .sidebar nav { flex: 1; overflow-y: auto; overflow-x: hidden; }
+.financial-menu {
+  --el-menu-bg-color: transparent;
+  --el-menu-text-color: #52656b;
+  --el-menu-active-color: #146d65;
+  --el-menu-hover-bg-color: #e5f1ee;
+  border: 0;
+  padding: 4px 12px;
+  width: 100%;
+}
+.financial-menu .el-menu-item-group__title { padding: 18px 12px 8px; }
+.financial-menu .nav-group-title { display: flex; justify-content: space-between; color: #82958f; font-size: 11px; }
+.financial-menu .nav-group-title small { font-size: 10px; font-variant-numeric: tabular-nums; color: #a2b1ad; }
+.financial-menu .el-menu-item {
+  height: 46px;
+  margin: 4px 0;
+  padding: 0 12px !important;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.financial-menu .el-menu-item .el-icon { color: #7b9693; margin-right: 10px; font-size: 18px; }
+.financial-menu .el-menu-item.is-active { background: #dceee8; box-shadow: inset 3px 0 #177b78; font-weight: 700; }
+.financial-menu .el-menu-item.is-active .el-icon { color: #177b78; }
+.financial-menu.el-menu--collapse .el-menu-item-group__title { padding: 8px 0; }
+.financial-shell .sidebar-institution {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #dce9e5;
+  color: #577870;
+}
+.financial-shell .sidebar-institution > .el-icon { font-size: 24px; flex-shrink: 0; }
+.financial-shell .sidebar-institution div { min-width: 0; overflow-wrap: anywhere; }
+.financial-shell .sidebar-institution strong { display: block; font-size: 13px; }
+.financial-shell .sidebar-institution span { display: block; font-size: 11px; margin-top: 5px; color: #82988e; }
+.financial-shell .workspace-shell { height: 100%; }
+.financial-shell .topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 28px 0 18px;
+  background: white;
+  border-bottom: 1px solid #e4ebec;
+}
+.financial-shell .topbar-left, .financial-shell .topbar-right { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.financial-shell .workspace-breadcrumb { display: flex; align-items: center; gap: 12px; font-size: 13px; min-width: 0; }
+.financial-shell .workspace-breadcrumb span { color: #89979b; white-space: nowrap; }
+.financial-shell .workspace-breadcrumb .el-icon { color: #a7b3b6; font-size: 11px; }
+.financial-shell .workspace-breadcrumb strong { color: #3b5158; font-weight: 600; overflow-wrap: anywhere; }
+.financial-shell .topbar .el-avatar { color: #177b78; background: #e7f2ef; }
+.financial-shell .user-block { display: grid; gap: 4px; max-width: 180px; overflow-wrap: anywhere; }
+.financial-shell .user-block strong { font-size: 12px; }
+.financial-shell .user-block span { font-size: 11px; color: #829094; }
+.financial-shell .main-area { padding: 0; min-width: 0; background: #f3f6f7; overflow-x: hidden; }
+.financial-shell .main-area > :is(.page-band, .pending-page, .notice-page, .training-page, .federated-page, .comparison-page) {
+  padding: 24px 28px 32px;
+  min-width: 0;
+}
+/* 页面区块为连续工作区，只有反复出现的行业模型保留独立卡片。 */
+.financial-shell .main-area :is(.query-band, .filter-strip, .filter-band, .table-band, .workspace-band, .top-band, .hero-band, .model-band, .comparison-results) {
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.financial-shell .main-area :is(.query-band, .filter-strip, .filter-band) { border-bottom: 1px solid #e1e9e8; padding: 18px 20px; }
+.financial-shell .main-area :is(.table-band, .workspace-band, .model-band) { padding: 20px; }
+.financial-shell .main-area :is(.top-band, .hero-band) { background: transparent; padding: 0 0 16px; border-bottom: 1px solid #dde7e7; }
+.financial-shell .main-area :is(.top-band, .hero-band, .workspace-header, .table-header) { flex-wrap: wrap; }
+.financial-shell .main-area :is(.top-band h2, .hero-band h2) { font-size: 20px; color: #24433e; font-weight: 700; }
+.financial-shell .main-area .comparison-heading h2 { font-size: 20px; color: #24433e; }
+.financial-shell .main-area .filter-title { flex-wrap: wrap; }
+.financial-shell .main-area :is(.query-form, .filter-form) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  align-items: end;
+  min-width: 0;
+}
+.financial-shell .main-area .query-form { margin-top: 16px; }
+.financial-shell .pending-page .filter-strip { display: block; }
+.financial-shell .filter-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.financial-shell .filter-title span { margin: 0; }
+.financial-shell .main-area :is(.query-form, .filter-form) .el-form-item { display: block; min-width: 0; margin: 0; }
+.financial-shell .main-area :is(.query-form, .filter-form) .el-form-item__label { width: auto !important; height: auto; padding: 0 0 7px; display: block; line-height: 20px; font-size: 12px; color: #687c80; }
+.financial-shell .main-area :is(.query-form, .filter-form) .el-form-item__content { margin-left: 0 !important; min-width: 0; }
+.financial-shell .main-area :is(.query-form, .filter-form) :is(.el-input, .el-select) { width: 100%; }
+.financial-shell .main-area :is(.query-actions, .filter-actions) { min-width: 0; }
+.financial-shell .main-area :is(.query-actions, .filter-actions) .el-form-item__content { gap: 8px; flex-wrap: wrap; }
+.financial-shell .notice-page .filter-actions { grid-column: span 2; }
+.financial-shell .main-area :is(.header-actions, .top-actions, .action-row) { flex-wrap: wrap; gap: 8px; }
+.financial-shell .main-area :is(.header-actions, .top-actions, .action-row, .filter-actions, .query-actions) .el-button + .el-button { margin-left: 0; }
+.financial-shell .main-area .el-input__wrapper, .financial-shell .main-area .el-select__wrapper { min-height: 36px; border-radius: 4px; }
+.financial-shell .main-area :is(.table-header, .workspace-header) h2 { font-size: 17px; color: #314d48; }
+.financial-shell .main-area .table-header { margin-bottom: 16px; }
+.financial-shell .main-area .el-table { --el-table-header-bg-color: #f0f5f4; --el-table-header-text-color: #55706a; --el-table-row-hover-bg-color: #f0f8f5; font-size: 13px; }
+.financial-shell .main-area .el-table th.el-table__cell { padding: 11px 0; font-weight: 600; }
+.financial-shell .main-area .el-table td.el-table__cell { padding: 10px 0; }
+.financial-shell .main-area .el-table .el-tag { border-radius: 4px; font-size: 11px; }
+.financial-shell .main-area .company-code-cell { font-family: Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.financial-shell .pagination-row { border-top: 1px solid #edf1f1; margin-top: 0; padding-top: 16px; overflow-x: auto; }
+.financial-shell .main-area .summary-grid { gap: 0; background: white; border-bottom: 1px solid #e1e9e8; }
+.financial-shell .main-area .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.financial-shell .main-area .metric-grid div { background: transparent; border: 0; border-radius: 0; padding: 8px 0; }
+.financial-shell .main-area .metric-grid strong { overflow-wrap: anywhere; color: #31554e; }
+.financial-shell .main-area .meta-row { flex-wrap: wrap; }
+/* 弹窗随窗口收缩，保留原有表单字段及提交逻辑。 */
+.financial-shell .data-dialog { max-width: calc(100vw - 32px); }
+.financial-shell .main-area :is(.summary-card, .summary-panel) { background: transparent; border: 0; border-radius: 0; padding: 20px; box-shadow: none; }
+.financial-shell .main-area :is(.summary-card, .summary-panel) + :is(.summary-card, .summary-panel) { border-left: 1px solid #e8eeee; }
+.financial-shell .main-area :is(.model-card, .federated-card) { border-color: #e0e9e7; border-radius: 6px; box-shadow: none; }
+.financial-shell .financial-data-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 18px 0; background: white; border-bottom: 1px solid #e1e9e8; }
+.financial-shell .financial-data-summary > div { padding: 2px 22px; min-width: 0; border-right: 1px solid #e7eeee; }
+.financial-shell .financial-data-summary > div:last-child { border: 0; }
+.financial-shell .financial-data-summary dt { color: #7c8e90; font-size: 12px; }
+.financial-shell .financial-data-summary dd { margin: 9px 0 0; color: #31554e; font-size: 23px; line-height: 1.4; font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.financial-shell .financial-data-summary small { margin-left: 7px; color: #91a09f; font-size: 12px; font-weight: 400; }
+.financial-shell .financial-data-summary .blue dd { color: #467fa6; }
+.financial-shell .financial-data-summary .amber dd { color: #a87b32; }
+.financial-shell .financial-data-summary .neutral dd { color: #617580; }
+.financial-shell :is(button, a, .el-menu-item):focus-visible { outline: 2px solid #177b78; outline-offset: 3px; }
+.financial-navigation-drawer .el-drawer__header { margin: 0; padding: 22px; font-size: 15px; color: #24554b; }
+.financial-navigation-drawer .el-drawer__body { padding: 0 8px 24px; background: #f3f8f6; }
+@media (max-width: 1200px) {
+  .financial-shell .main-area > :is(.page-band, .pending-page, .notice-page, .training-page, .federated-page, .comparison-page) { padding: 20px; }
+  .financial-shell .main-area .summary-grid { grid-template-columns: minmax(0, 1fr); }
+  .financial-shell .main-area :is(.summary-card, .summary-panel) + :is(.summary-card, .summary-panel) { border-left: 0; border-top: 1px solid #e8eeee; }
+}
+@media (max-width: 600px) {
+  .financial-shell .topbar { padding: 0 10px; height: 58px; gap: 4px; }
+  .financial-shell .topbar-left, .financial-shell .topbar-right { gap: 4px; }
+  .financial-shell .topbar :is(.user-block, .el-avatar, .workspace-breadcrumb > span, .workspace-breadcrumb > .el-icon) { display: none; }
+  .financial-shell .workspace-breadcrumb { font-size: 12px; }
+  .financial-shell .main-area > :is(.page-band, .pending-page, .notice-page, .training-page, .federated-page, .comparison-page) { padding: 12px; }
+  .financial-shell .main-area :is(.query-band, .filter-strip, .filter-band, .table-band, .workspace-band, .model-band, .comparison-results) { padding: 16px 12px; }
+  .financial-shell .main-area :is(.query-form, .filter-form) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .financial-shell .main-area :is(.query-actions, .filter-actions) { grid-column: 1 / -1; }
+  .financial-shell .financial-data-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 16px; }
+  .financial-shell .financial-data-summary > div { padding: 2px 12px; }
+  .financial-shell .financial-data-summary > div:nth-child(2) { border: 0; }
+  .financial-shell .financial-data-summary dd { font-size: 20px; }
+  .financial-shell .main-area :is(.comparison-heading, .workspace-header, .table-header) { align-items: flex-start; gap: 12px; }
+  .financial-shell .main-area .comparison-heading { flex-wrap: wrap; }
+  .financial-shell .main-area .pagination-row { justify-content: flex-start; }
+  .financial-shell .main-area :is(.model-grid, .federated-grid) { grid-template-columns: minmax(0, 1fr); }
+  .financial-shell .main-area .comparison-toolbar .el-radio-group { display: flex; flex-wrap: wrap; gap: 6px; }
+  .financial-shell .main-area .comparison-toolbar .el-radio-button__inner { border: 1px solid var(--el-border-color); border-radius: 4px; }
+  .financial-shell .data-dialog .form-grid { grid-template-columns: minmax(0, 1fr); }
+}
